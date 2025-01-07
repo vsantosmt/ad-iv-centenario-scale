@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escala Louvor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Escala Online</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Músicas</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Escala Louvor</h2>
+        <a href="#" class="add-button" id="openFormButton">Adicionar</a>
+
+        <div id="formContainer" style="display: none;">
+            <label for="dayInput">Dia:</label>
+            <input type="date" id="dayInput" required />
+            <button id="submitFormButton">Enviar</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar Escalas">
+        </div>
+
+        <ul class="schedule" id="infoList">
+            <!-- Lista vazia -->
+        </ul>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
