@@ -16,6 +16,12 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version  # Verificar a instalação do Docker Compose
 
+      - name: Verify current directory
+        run: pwd
+
+      - name: List files in the root directory
+        run: ls -l /github/workspace
+
       - name: Build Docker image
         run: docker-compose up --build
 
