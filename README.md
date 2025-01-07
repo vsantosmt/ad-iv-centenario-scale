@@ -1,1 +1,0 @@
-# ad-iv-centenario-scale
