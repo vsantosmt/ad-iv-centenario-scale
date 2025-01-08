@@ -11,6 +11,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       
       - name: Install Docker Compose
         run: |
@@ -19,7 +22,10 @@ jobs:
           docker-compose --version  # Verificar a instalação do Docker Compose
 
       - name: Build Docker image
-        run: docker build -t frontend:1.0 ./frontend
+        run: docker build -t vsantosmt/ad-iv-centenario-scale-frontend:1.0 ./frontend
+
+      - name: Push Docker image
+        run: docker push vsantosmt/ad-iv-centenario-scale-frontend:1.0
 
   deploy:
     runs-on: ubuntu-latest
@@ -27,4 +33,4 @@ jobs:
 
     steps:
       - name: Deploy Docker image
-        run: docker run -d -p 80:80 frontend:1.0
+        run: docker run -d -p 80:80 vsantosmt/ad-iv-centenario-scale-frontend:1.0
