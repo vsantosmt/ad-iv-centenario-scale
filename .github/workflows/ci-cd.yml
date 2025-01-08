@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
       - name: Install Docker Compose
         run: |
           sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -18,7 +19,7 @@ jobs:
           docker-compose --version  # Verificar a instalação do Docker Compose
 
       - name: Build Docker image
-        run: docker build -t frontend:1.0 ./frontend
+        run: docker build -t frontend .
 
   deploy:
     runs-on: ubuntu-latest
