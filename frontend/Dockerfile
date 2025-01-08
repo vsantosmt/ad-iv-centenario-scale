@@ -4,7 +4,7 @@ FROM nginx:alpine
 # Definir o diretório de trabalho no container
 WORKDIR /usr/share/nginx/html
 
-COPY frontend/ /usr/share/nginx/html/
+COPY . /usr/share/nginx/html/
 
 # Expor a porta 80 para acessar o conteúdo via navegador
 EXPOSE 80
