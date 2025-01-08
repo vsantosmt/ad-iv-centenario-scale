@@ -19,7 +19,7 @@ jobs:
           docker-compose --version  # Verificar a instalação do Docker Compose
 
       - name: Build Docker image
-        run: docker build -t frontend:v1 .
+        run: docker build -t frontend:1.0 ./frontend
 
   deploy:
     runs-on: ubuntu-latest
